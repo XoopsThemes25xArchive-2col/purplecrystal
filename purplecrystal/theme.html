@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- Meta Tags -->
+<meta name="Description" content="<{$xoops_meta_description}>" />
+<meta http-equiv="content-type" content="text/html; charset=<{$xoops_charset}>" />
+<meta http-equiv="content-language" content="<{$xoops_langcode}>" />
+<meta name="keywords" content="<{$xoops_pagetitle}>,<{$xoops_meta_keywords}>" />
+<meta name="rating" content="<{$xoops_meta_rating}>" />
+<meta name="author" content="<{$xoops_meta_author}>" />
+<meta name="copyright" content="<{$xoops_meta_copyright}>" />
+<meta name="generator" content="<{$smarty.const.META_GENER}>" />
+<meta name="robots" content="<{$xoops_meta_robots}>" />
+<meta name="revisit-after" content="<{$smarty.const.META_REV_AFT}>" />
+
+<!-- Styles/Relations -->
+<link rel="alternate" type="application/rss+xml" title="RSS" href="<{$xoops_url}>/backend.php" />
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_url}>/xoops.css" />
+<link rel="stylesheet" href="<{$xoops_imageurl}>otherCss/print.css" type="text/css" media="print" />
+<link rel="alternate stylesheet" type="text/css" href="<{$xoops_imageurl}>otherCss/highcontrast.css" title="zoom" rev="zoom" media="screen"/>
+<link rel="stylesheet" type="text/css" media="screen" href="<{$xoops_themecss}>" title="default" />
+<!-- <link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/themes/purplecrystal/reset.css" /> -->
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/themes/purplecrystal/text.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<{$xoops_url}>/themes/purplecrystal/960.css" />
+
+<!-- Important! - Add specific code from modules -->
+<{$xoops_module_header}>
+
+<!-- Dublin Core MetaData [DCMI] Tags -->
+<link rel="schema.DC" href="http://purl.org/dc/elements/1.1/" />
+<link rel="schema.DCTERMS" href="http://purl.org/dc/terms/" />
+<meta name="DC.title" lang="<{$xoops_langcode}>" content="<{$xoops_pagetitle}> - <{$xoops_sitename}>" />
+<meta name="DC.creator" content="<{$xoops_sitename}>" />
+<meta name="DC.subject" lang="<{$xoops_langcode}>" content="<{$xoops_meta_keywords}>, <{$xoops_pagetitle}>" />
+<meta name="DC.description" lang="<{$xoops_langcode}>" content="<{$xoops_pagetitle}>, <{$xoops_meta_description}>" />
+<meta name="DC.publisher" content="<{$xoops_sitename}>" />
+<meta name="DC.type" content="<{$smarty.const.META_DCMI_TYP}>" />
+<meta name="DC.format" content="text/html; charset=<{$xoops_charset}>" />
+<meta name="DC.identifier" scheme="DCTERMS.URI" content="<{$xoops_url}>" />
+<meta name="DC.language" scheme="DCTERMS.RFC1766" content="<{$xoops_langcode}>" />
+<meta name="DC.coverage" content="<{$smarty.const.META_DCMI_COV}>" /> 
+<meta name="DC.rights" content="<{$xoops_meta_copyright}>" />
+
+<title><{$xoops_sitename}><{if $xoops_pagetitle !=''}> - <{$xoops_pagetitle}><{/if}></title>
+<link href="<{$xoops_url}>/favicon.ico" rel="SHORTCUT ICON" />
+</head>
+
+<div class="container_12">
+	<div class="grid_12">
+		<div id="header"></div>
+	</div>
+	<div class="clear"></div>
+</div>
+	
+<div id="menu" class="container_12">
+	<div class="grid_2"><a href="<{$xoops_url}>" id="active" class="home">Home</a></div>
+	<div class="grid_2"><a href="#" id="rollover" class="about">About</a></div> 
+	<div class="grid_2"><a href="#" id="rollover" class="portfolio">Portfolio</a></div> 
+	<div class="grid_2"><a href="#" id="rollover" class="service">Service</a></div> 
+	<div class="grid_2"><a href="#" id="rollover" class="download">Download</a></div> 
+	<div class="grid_2"><a href="#" id="rollover" class="blog">Blog</a></div> 
+	<div class="clear"></div>
+</div>
+
+<div id="showcase" class="container_12">
+	<div class="grid_1"><div id="showcasemargin"></div></div>
+	<div class="grid_10">
+	<a href="http://zen.xoops.org.cn/portfolio/stablish/" id="showcasecenter">Stablish</a>
+	</div>
+	<div class="grid_1"><div id="showcasemargin"></div></div>
+	<div class="clear"></div>
+</div>
+
+<div id="pur-content" class="container_12">
+	<div class="grid_1"><div id="showcasemargin"></div></div>
+	<div class="grid_7">
+		<div id="contentlefttop"></div>
+		<div id="contentmain">
+			<{foreach item=block from=$xoops_cblocks}>
+			<{if $xoops_cblocks}>
+				<!-- Sides block -->
+				<li>
+				<{if $block.title == ''}> <{* Useful for diplaying well blocks with no title *}>
+				<{$block.content}>
+				<{else}>
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+				<{/if}>
+				<!-- Side block end -->
+				</li>
+				<{/if}>
+			<{/foreach}>
+			<{$xoops_contents}>
+		</div>
+		<div id="contentleftbottom"></div>
+	</div>
+	<div class="grid_3">
+		<div id="contentrighttop"></div>
+		<div id="contentmain">
+			<{foreach item=block from=$xoops_rblocks}>
+			<{if $xoops_rblocks}>
+				<!-- Sides block -->
+				<li>
+				<{if $block.title == ''}> <{* Useful for diplaying well blocks with no title *}>
+				<{$block.content}>
+				<{else}>
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+				<{/if}>
+				<!-- Side block end -->
+				</li>
+				<{/if}>
+			<{/foreach}>
+			
+			<{foreach item=block from=$xoops_lblocks}>
+			<{if $xoops_lblocks}>
+				<!-- Sides block -->
+				<{if $block.title == ''}> <{* Useful for diplaying well blocks with no title *}>
+				<{$block.content}>
+				<{else}>
+				<h2><{$block.title}></h2>
+				<{$block.content}>
+				<{/if}>
+				<!-- Side block end -->
+				<{/if}>
+			<{/foreach}>
+		</div>
+		<div id="contentrightbottom"></div>
+	</div>
+	<div class="grid_1"><div id="showcasemargin"></div></div>
+</div>
+
+<div id="content" class="container_12">
+<div id="footer" class="grid_12">Proudly Powered by <a href="http://xoops.org">XOOPS</a> | Theme: PurpleCrystal by <a href="http://zen.xoops.org.cn/">XOOPS Zen Garden</a></div>
+</div>
+<body>
+</body>
+</html>
